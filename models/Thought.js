@@ -11,7 +11,12 @@ const ReactionSchema = new Schema({
         required: true,
         maxlength: 280
     },
+
     username: {
+        type: String,
+        required: true
+    },
+    createdAt: {
         type: Date,
         default: Date.now,
         get: createdAtVal => dateFormat(createdAtVal)
@@ -19,7 +24,8 @@ const ReactionSchema = new Schema({
 },
 {
     toJSON: {
-        getters: true        
+        getters: true,
+        virtuals: true       
     }
 }
 );
@@ -34,7 +40,7 @@ const ThoughtShema = new Schema ({
     createdAt: {
         type: Date,
         default: Date.now,
-        get: (createdAt) => dateFormat(createdAtVal)
+        get: createdAtVal => dateFormat(createdAtVal)
     },
     username:{
         type: String,

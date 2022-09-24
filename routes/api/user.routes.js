@@ -16,9 +16,9 @@ router
 .get(getAllUsers)
 .post(createUser);
 
-
+//params userId from controller/user.rontroller.js
 router
-.route('./:Id')
+.route('./:userId')
 .get(getUserById)
 .put(updateUser)
 .delete(deleteUser);
